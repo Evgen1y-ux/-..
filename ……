@@ -1,0 +1,54 @@
+numbers = []
+sum_even = 0
+sum_odd = 0
+while True:
+   num = int(input("Введите число (для завершения введите 0): "))
+   if num == 0:
+       numbers.append(num)
+       for num in numbers:
+           if num % 2 == 0:
+               sum_even += num
+       else:
+               sum_odd += num
+               average = sum(numbers) / len(numbers)
+               print(f"Сумма четных чисел: {sum_even}")
+               print(f"Сумма нечетных чисел: {sum_odd}")
+               print(f"Среднее арифметическое: {average}")
+
+num = int(input("Введите число от 1 до 10: "))
+while num < 1 or num > 10:
+    num = int(input("Введите корректное число от 1 до 10: "))
+    for i in range(1, 11):
+        if i == num:
+            print("!" + str(i) + "!", end=" ")
+        else:
+            print(i, end=" ")
+
+
+num = int(input("Введите число от 1 до 10: "))
+while num < 1 or num > 10:
+    num = int(input("Введите корректное число от 1 до 10: "))
+    for i in range(1, 11):
+        if i == num:
+            print("!" + str(i) + "!", end=" ")
+        else:
+            print(i, end=" ")
+            number = int(input("Введите десятизначное число: "))
+            max_digit = 0
+            min_digit = 9
+            while number > 0:
+                digit = number % 10
+                if digit > max_digit:
+                    max_digit = digit
+                    if digit < min_digit:
+                        min_digit = digit
+                        number //= 10
+                        print(f"Наибольшая цифра: {max_digit}")
+                        print(f"Наименьшая цифра: {min_digit}")
+
+num = input("Введите шестизначное число: ")
+if len(num) != 6:
+    print("Ошибка! Введите шестизначное число.")
+else:
+    sum_first_half = int(num[0]) + int(num[1]) + int(num[2])
+    sum_second_half = int(num[3]) + int(num[4]) + int(num[5])
